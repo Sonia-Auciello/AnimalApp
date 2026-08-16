@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/passionate_profile">
+
+    <fragment
+        android:id="@+id/passionate_profile"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionateProfileFragment"
+        android:label="@string/title_fragment_passionate_profile"
+        tools:layout="@layout/fragment_passionate_profile" >
+
+        <action
+            android:id="@+id/action_passionate_profile_to_animalProfile"
+            app:destination="@id/animalProfile"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_passionate_profile_to_BookedReservationsFragment"
+            app:destination="@id/passionateBookedReservations"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_passionate_profile_to_reportsDashboardFragment"
+            app:destination="@id/reportsDashboardFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_passionate_profile_to_passionateVeterinarianListFragment"
+            app:destination="@id/passionateVeterinarianListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_passionate_profile_to_passionatePokAnimalList"
+            app:destination="@id/passionatePokAnimalList"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_passionate_profile_to_passionateOrganizationListFragment"
+            app:destination="@id/passionateOrganizationListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_passionate_profile_to_userProfileInfoFragment"
+            app:destination="@id/userProfileInfoFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/passionate_pet_care"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionateReservationFragment"
+        android:label="@string/title_fragment_passionate_reservation"
+        tools:layout="@layout/fragment_passionate_calendar_reservation" />
+
+    <fragment
+        android:id="@+id/passionate_purchase"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionatePurchaseFragment"
+        android:label="@string/title_fragment_passionate_purchases"
+        tools:layout="@layout/fragment_passionate_purchase" >
+        <action
+            android:id="@+id/action_passionate_purchase_to_filterPurchaseFragment"
+            app:destination="@id/filterPurchaseFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/filterPurchaseFragment"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionateFilterPurchaseFragment"
+        tools:layout="@layout/fragment_passionate_filter_purchase"
+        android:label="Filtri" >
+        <action
+            android:id="@+id/action_filterPurchaseFragment_to_passionate_purchase"
+            app:destination="@id/passionate_purchase"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/animalProfile"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.animalprofile.AnimalProfile"
+        android:label="AnimalProfile"
+        tools:layout="@layout/fragment_animal_profile"/>
+
+    <fragment
+        android:id="@+id/passionateBookedReservations"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionateBookedReservationsFragment"
+        android:label="@string/title_fragment_passionate_booked_reservation"
+        tools:layout="@layout/fragment_passionate_booked_reservations"/>
+
+    <fragment
+        android:id="@+id/passionate_requests"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.requests.RequestsFragment"
+        android:label="@string/title_fragment_requests"
+        tools:layout="@layout/fragment_requests">
+        <action
+            android:id="@+id/action_passionate_requests_to_passionate_request_detail"
+            app:destination="@id/request_detail"
+            app:popUpTo="@id/passionate_requests"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/request_detail"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.requests.RequestDetailFragment"
+        android:label="@string/title_fragment_requests"
+        tools:layout="@layout/fragment_request_details">
+        <action
+            android:id="@+id/action_request_detail_to_animalProfile"
+            app:destination="@id/animalProfile"
+            app:popUpTo="@id/request_detail"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportsDashboardFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.reports.ReportsDashboardFragment"
+        android:label="@string/title_fragment_reports"
+        tools:layout="@layout/fragment_reports_dashboard">
+
+        <action
+            android:id="@+id/action_reportsDashboardFragment_to_reportAddNewFragment"
+            app:destination="@id/reportAddNewFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_reportsDashboardFragment_to_reportDetailFragment"
+            app:destination="@id/reportDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportAddNewFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.reports.ReportAddNewFragment"
+        android:label="@string/title_fragment_add_report"
+        tools:layout="@layout/fragment_reports_add_new"/>
+
+    <fragment
+        android:id="@+id/reportDetailFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.reports.ReportDetailFragment"
+        android:label="@string/title_fragment_details_report"
+        tools:layout="@layout/fragment_reports_details">
+        <action
+            android:id="@+id/action_reportDetailFragment_to_animalProfile"
+            app:destination="@id/animalProfile"
+            app:popUpTo="@id/reportDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/passionateVeterinarianListFragment"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionateVeterinarianInfoListFragment"
+        android:label="@string/veterinarian_list"
+        tools:layout="@layout/fragment_passionate_veterinarian_info_list"/>
+
+    <fragment
+        android:id="@+id/passionatePokAnimalList"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionatePokAnimalList"
+        android:label="@string/title_fragment_pokeanimal"
+        tools:layout="@layout/fragment_passionate_pokanimal"/>
+
+    <fragment
+        android:id="@+id/passionateOrganizationListFragment"
+        android:name="it.uniba.dib.sms22245.tasks.passionate.fragments.PassionateOrganizationInfoListFragment"
+        android:label="@string/organization_list"
+        tools:layout="@layout/fragment_passionate_organization_info_list"/>
+
+    <fragment
+        android:id="@+id/userProfileInfoFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.userprofile.UserProfileInfoFragment"
+        android:label="@string/dettagli_profilo"
+        tools:layout="@layout/fragment_user_profile_info"/>
+
+</navigation>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/veterinarian_profile">
+
+    <fragment
+        android:id="@+id/animalProfile"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.animalprofile.AnimalProfile"
+        android:label="AnimalProfile"
+        tools:layout="@layout/fragment_animal_profile"/>
+
+    <fragment
+        android:id="@+id/veterinarian_profile"
+        android:name="it.uniba.dib.sms22245.tasks.veterinarian.fragments.VeterinarianProfileFragment"
+        android:label="@string/title_fragment_veterinarian_profile"
+        tools:layout="@layout/fragment_veterinarian_profile">
+        <action
+            android:id="@+id/action_passionate_profile_to_reportsDashboardFragment"
+            app:destination="@id/reportsDashboardFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_veterinarian_profile_to_userProfileInfoFragment"
+            app:destination="@id/userProfileInfoFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_veterinarian_profile_to_animalProfile"
+            app:destination="@id/animalProfile"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/veterinarian_animal_list"
+        android:name="it.uniba.dib.sms22245.tasks.veterinarian.fragments.VeterinarianAnimalListFragment"
+        android:label="@string/title_fragment_veterinarian_animal_list"
+        tools:layout="@layout/fragment_animal_list">
+        <action
+            android:id="@+id/action_veterinarian_animal_list_to_animalProfile"
+            app:destination="@id/animalProfile"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/veterinarian_reservation"
+        android:name="it.uniba.dib.sms22245.tasks.veterinarian.fragments.VeterinarianReservationFragment"
+        android:label="@string/title_fragment_veterinarian_reservations"/>
+
+    <fragment
+        android:id="@+id/veterinarian_backbench"
+        tools:layout="@layout/fragment_backbench"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.backbenches.BackBenchFragment"
+        android:label="@string/title_fragment_veterinarian_backbench" />
+
+    <fragment
+        android:id="@+id/veterinarian_requests"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.requests.RequestsFragment"
+        android:label="@string/title_fragment_requests">
+        <action
+            android:id="@+id/action_veterinarian_requests_to_veterinatian_request_detail"
+            app:destination="@id/request_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/request_detail"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.requests.RequestDetailFragment"
+        android:label="@string/title_fragment_requests"/>
+
+    <fragment
+        android:id="@+id/reportsDashboardFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.reports.ReportsDashboardFragment"
+        android:label="Dashboard segnalazioni"
+        tools:layout="@layout/fragment_reports_dashboard">
+        <action
+            android:id="@+id/action_reportsDashboardFragment_to_reportAddNewFragment"
+            app:destination="@id/reportAddNewFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_reportsDashboardFragment_to_reportDetailFragment"
+            app:destination="@id/reportDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportAddNewFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.reports.ReportAddNewFragment"
+        android:label="Dettagli segnalazione"
+        tools:layout="@layout/fragment_reports_add_new"/>
+
+    <fragment
+        android:id="@+id/reportDetailFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.reports.ReportDetailFragment"
+        android:label="ReportDetailFragment" >
+        <action
+            android:id="@+id/action_reportDetailFragment_to_animalProfile"
+            app:destination="@id/animalProfile"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/userProfileInfoFragment"
+        android:name="it.uniba.dib.sms22245.tasks.common.views.userprofile.UserProfileInfoFragment"
+        android:label="@string/dettagli_profilo"
+        tools:layout="@layout/fragment_user_profile_info"/>
+
+</navigation>

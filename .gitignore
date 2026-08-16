@@ -1,0 +1,19 @@
+# Android Studio / Gradle
+.gradle/
+.idea/
+*.iml
+local.properties
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+.DS_Store
+
+# Firebase configuration
+app/google-services.json
+
+# Signing / secrets
+*.jks
+*.keystore
+keystore.properties
+.env

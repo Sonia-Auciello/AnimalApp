@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="15dp"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/inserisci_diagnosi"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+
+    <EditText
+        android:id="@+id/txtInputDiagnosisDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_edit_note_24"
+        android:drawablePadding="10dp"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:minHeight="48dp"
+        android:lines="8"
+        android:maxLines="10"
+        android:textSize="17sp"
+        android:textColorHint="?attr/colorOnSecondary"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#757575"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="@string/inserisci_doc_diagnosi"
+            />
+
+        <Button
+            android:id="@+id/btnAddDiagnosisFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:drawableRight="@drawable/ic_baseline_post_add_24"
+            android:layout_weight="5"
+            android:drawableTint="?attr/colorPrimary"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddDiagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="@string/completa_inserimento" />
+
+
+</LinearLayout>

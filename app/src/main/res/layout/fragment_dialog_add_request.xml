@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/titolo_richiesta"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <EditText
+            android:id="@+id/txtRequestTitleInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:drawableStart="@drawable/ic_baseline_tag_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#2E7D32"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/requestsParamsChipGroupDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipSpacingHorizontal="15dp"
+            app:singleSelection="true"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="?attr/colorSecondary"
+                app:checkedIcon="@drawable/ic_baseline_check_24"
+                android:text="@string/offerta_animale"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:textColor="@color/black"
+                android:id="@+id/chipAnimal" />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="?attr/colorSecondary"
+                app:checkedIcon="@drawable/ic_baseline_check_24"
+                android:text="@string/aiuto"
+                android:id="@+id/chipHelp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:textColor="@color/black"/>
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipBackgroundColor="?attr/colorSecondary"
+                app:checkedIcon="@drawable/ic_baseline_check_24"
+                android:text="@string/offerta_stallo"
+                android:id="@+id/chipHome"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:textColor="@color/black"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+
+    </HorizontalScrollView>
+
+    <Spinner
+        android:id="@+id/spinnerRequestAnimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_spinner_role"
+        android:popupBackground="@drawable/bg_spinner_dropdown"
+        android:minHeight="48dp"
+        android:visibility="gone"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/descrizione"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <EditText
+            android:id="@+id/txtRequestBodyInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_edit_note_24"
+            android:drawablePadding="10dp"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:minHeight="48dp"
+            android:lines="8"
+            android:maxLines="10"
+            android:textSize="17sp"
+            android:textColorHint="?attr/colorOnPrimary"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnConfirmRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="btnRegisterAction"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/inserisci_richiesta" />
+
+
+</LinearLayout>
